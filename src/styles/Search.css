@@ -1,3 +1,8 @@
+.search {
+  display: flex;
+  align-items: center;
+}
+
 .search__icon {
   width: 16px;
   height: 16px;
@@ -13,7 +18,6 @@
   border-radius: 10px;
   border: 1px solid #c1c1cb;
   padding-left: 8px;
-  /* padding-right: 8px; */
   margin-left: 96px;
 }
 
@@ -30,5 +34,5 @@
 }
 
 .search__iconNotActive {
-  margin-left: 719px;
+  margin-left: 714px;
 }
