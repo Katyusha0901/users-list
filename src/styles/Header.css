@@ -1,11 +1,13 @@
 .header {
   display: flex;
+  /* position: absolute; */
   height: 75px;
   align-items: center;
-  padding-left: 29px;
-  padding-right: 29px;
+  /* padding-left: 29px; */
+  /* padding-right: 29px; */
   border-bottom: 1px solid;
   border-color: #ebebf0;
+  width: 100vw;
 }
 
 .header__title {
@@ -14,4 +16,6 @@
 }
 
 .header__options {
+  display: flex;
+  justify-self: end;
 }

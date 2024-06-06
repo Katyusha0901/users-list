@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100px;
+  min-width: 100px;
   min-height: 100vh;
   background-color: #f9fafb;
   padding-top: 25px;
   gap: 25px;
+  border-radius: 10px;
 }
 
 .side-bar__emblem {

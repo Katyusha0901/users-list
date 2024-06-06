@@ -3,4 +3,11 @@
   padding-top: 53px;
   padding-left: 105px;
   padding-right: 105px;
+  /* position: absolute; */
+  background-color: #ebebf0;
+}
+
+.users-content__main {
+  background-color: #f9fafb;
+  border-radius: 10px;
 }
