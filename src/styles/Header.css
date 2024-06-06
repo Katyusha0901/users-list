@@ -10,9 +10,10 @@
 }
 
 .header__title {
-  font-size: 26px;
   font-family: "Futura PT";
-  font-weight: 500;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 26px;
 }
 
 .header__options {

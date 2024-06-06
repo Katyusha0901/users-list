@@ -20,8 +20,10 @@
 .search__input {
   border: 0px;
   background-color: #f9fafb;
-  font-family: "Futura PT";
   height: 20px;
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: normal;
 }
 
 .search__iconNotActive {
