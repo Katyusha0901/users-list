@@ -1,9 +1,10 @@
 .side-bar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100px;
+  min-height: 100vh;
   background-color: #f9fafb;
   padding-top: 25px;
   gap: 25px;
@@ -13,4 +14,15 @@
   background-image: url("../images/emblem.svg");
   width: 22.47px;
   height: 34px;
+}
+
+.side-bar__admin-icon {
+  width: 60px;
+  height: 60px;
+  background-image: url("../images/admin-icon.svg");
+}
+
+.side-bar__icon {
+  width: 25px;
+  height: 25px;
 }
