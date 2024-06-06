@@ -8,6 +8,7 @@ export function Header() {
       <div className="header__title">Команда</div>
       <div className="header__options">
         <Search />
+        <div className="header__add-button">Добавить пользователя</div>
       </div>
     </div>
   );

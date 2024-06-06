@@ -1,10 +1,9 @@
 .users-content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 25px;
-  margin-left: 105px;
-  margin-right: 105px;
+  width: 93vw;
 }
 
 .users-content__content {

@@ -14,9 +14,26 @@
   font-weight: 700;
   font-style: normal;
   font-size: 26px;
+  line-height: 44px;
 }
 
 .header__options {
   display: flex;
   justify-self: end;
+}
+
+.header__add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 218px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: #32c076;
+  font-family: Futura PT;
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 20px;
+  margin-left: 10px;
+  color: #f9fafb;
 }
