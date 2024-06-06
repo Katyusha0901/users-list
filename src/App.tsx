@@ -1,12 +1,12 @@
 import React from "react";
-import users from "./users.json";
 import { SideBar } from "./components/SideBar";
+import { UsersContent } from "./components/UserContent/UsersContent";
 
 export function App() {
-  console.log(users);
   return (
     <div className="App">
       <SideBar />
+      <UsersContent />
     </div>
   );
 }
