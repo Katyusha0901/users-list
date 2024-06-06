@@ -1,11 +1,16 @@
 .header {
   display: flex;
-  padding-top: 53px;
-  padding-left: 105px;
-  padding-right: 105px;
+  height: 75px;
+  align-items: center;
+  padding-left: 29px;
+  padding-right: 29px;
+  border-bottom: 1px solid;
+  border-color: #ebebf0;
 }
 
 .header__title {
+  font-size: 26px;
+  font-family: "Futura PT";
 }
 
 .header__options {
