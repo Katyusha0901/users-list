@@ -6,7 +6,9 @@ export function UsersContent() {
 
   return (
     <div className="users-content">
-      <Header />
+      <div className="users-content__content">
+        <Header />
+      </div>
     </div>
   );
 }

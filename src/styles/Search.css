@@ -1,4 +1,29 @@
 .search__icon {
   width: 16px;
   height: 16px;
+  margin-right: 16px;
+}
+
+.search__input-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 649px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #c1c1cb;
+  padding-left: 8px;
+  /* padding-right: 8px; */
+  margin-left: 96px;
+}
+
+.search__input {
+  border: 0px;
+  background-color: #f9fafb;
+  font-family: "Futura PT";
+  height: 20px;
+}
+
+.search__iconNotActive {
+  margin-left: 719px;
 }

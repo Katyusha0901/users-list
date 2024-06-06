@@ -1,8 +1,13 @@
 .users-content {
   display: flex;
-  margin-top: 53px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
   margin-left: 105px;
   margin-right: 105px;
+}
+
+.users-content__content {
   background-color: #f9fafb;
   border-radius: 10px;
 }
