@@ -1,10 +1,21 @@
 import closeButton from "../../images/CloseButton.svg";
 import arrow from "../../images/arrow.svg";
 import "../../styles/SendInvitation.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { PermissionsContext } from "../../PermissionsContext";
 
 export function SendInvitation() {
   const [isClickArrow, setIsClickArrow] = useState<boolean>(false);
+  const { takeAllPermissions } = useContext(PermissionsContext);
+  const [permissionStatus, setPermissionStatus] = useState<
+    { permissionName: string; isChecked: boolean }[]
+  >(permitionsStatusObObject());
+  function permitionsStatusObObject() {
+    return takeAllPermissions().map((permission: string) => {
+      return { permissionName: permission, isChecked: false };
+    });
+  }
+
   return isClickArrow ? (
     <>
       (
@@ -29,7 +40,7 @@ export function SendInvitation() {
             <img
               src={arrow}
               alt="arrow"
-              onClick={() => setIsClickArrow(true)}
+              onClick={() => setIsClickArrow(false)}
             />
           </div>
           <div className="send-invitation__send-button">
@@ -37,7 +48,45 @@ export function SendInvitation() {
           </div>
         </div>
       </div>
-      <div className="send-invitation__rules"></div>)
+      <div className="send-invitation__rules">
+        {permissionStatus.map(
+          (permission: { permissionName: string; isChecked: boolean }) => {
+            return permission.isChecked ? (
+              <div className="send-invitation__rules-item">
+                <div
+                  className="send-invitation__checkbox-clicked"
+                  onClick={() => {
+                    setPermissionStatus(
+                      permissionStatus.map(
+                        (permission: {
+                          permissionName: string;
+                          isChecked: boolean;
+                        }) => {
+                          return {
+                            permissionName: permission.permissionName,
+                            isChecked: !permission.isChecked,
+                          };
+                        }
+                      )
+                    );
+                  }}
+                ></div>
+                <div className="send-invitation__permission">
+                  {permission.permissionName}
+                </div>
+              </div>
+            ) : (
+              <div className="send-invitation__rules-item">
+                <div className="send-invitation__checkbox"></div>
+                <div className="send-invitation__permission">
+                  {permission.permissionName}
+                </div>
+              </div>
+            );
+          }
+        )}
+      </div>
+      )
     </>
   ) : (
     <div className="send-invitation">
