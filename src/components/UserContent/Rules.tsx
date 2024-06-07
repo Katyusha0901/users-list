@@ -1,6 +1,7 @@
 import check from "../../images/check.svg";
 import { useState, useContext } from "react";
 import { PermissionsContext } from "../../PermissionsContext";
+import "../../styles/Rules.css";
 
 interface Props {}
 
@@ -17,13 +18,13 @@ export const Rules: React.FC<Props> = () => {
     });
   }
   return (
-    <div className="send-invitation__rules">
+    <div className="rules">
       {permissionStatus.map(
         (permission: { permissionName: string; isChecked: boolean }) => {
           return permission.isChecked ? (
-            <div className="send-invitation__rules-item">
+            <div className="rules__item">
               <div
-                className="send-invitation__checkbox send-invitation__checkbox_clicked"
+                className="rules__checkbox rules__checkbox_clicked"
                 onClick={() => {
                   setPermissionStatus(
                     permissionStatus.map(
@@ -43,20 +44,14 @@ export const Rules: React.FC<Props> = () => {
                   );
                 }}
               >
-                <img
-                  src={check}
-                  alt="check"
-                  className="send-invitation__check"
-                />
+                <img src={check} alt="check" className="rules__check" />
               </div>
-              <div className="send-invitation__permission">
-                {permission.permissionName}
-              </div>
+              <div>{permission.permissionName}</div>
             </div>
           ) : (
-            <div className="send-invitation__rules-item">
+            <div className="rules__item">
               <div
-                className="send-invitation__checkbox"
+                className="rules__checkbox"
                 onClick={() => {
                   setPermissionStatus(
                     permissionStatus.map(
@@ -76,9 +71,7 @@ export const Rules: React.FC<Props> = () => {
                   );
                 }}
               ></div>
-              <div className="send-invitation__permission">
-                {permission.permissionName}
-              </div>
+              <div>{permission.permissionName}</div>
             </div>
           );
         }

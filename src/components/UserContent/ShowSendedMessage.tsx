@@ -11,13 +11,21 @@ export const ShowSendedMessage: React.FC<Props> = ({
   return (
     <div className="show-message">
       <div className="show-message__content">
-        <div className="show-message__title">
-          Приглашение отправлено на почту {emailData}
-        </div>
+        {emailData === "Email" ? (
+          <div className="show-message__title">
+            Приглашение отправлено на почту example@email.com
+          </div>
+        ) : (
+          <div className="show-message__title">
+            Приглашение отправлено на почту {emailData}
+          </div>
+        )}
         <div
           className="show-message__button"
           onClick={() => setSendedInvitationFunction(false)}
-        ></div>
+        >
+          Закрыть
+        </div>
       </div>
     </div>
   );

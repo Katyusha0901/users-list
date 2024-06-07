@@ -10,13 +10,16 @@
   transform: translate(-50%, -50%);
   background-color: #f9fafb;
   box-shadow: -30px 30px 50px rgb(28, 28, 30, 0.1);
+  border-radius: 25px;
 }
 
 .show-message__content {
+  width: 404px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .show-message__title {
@@ -24,4 +27,21 @@
   font-weight: 600;
   font-size: 22px;
   line-height: 26.4px;
+  text-align: center;
+}
+
+.show-message__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 404px;
+  height: 61px;
+  color: #f9fafb;
+  background-color: #32c076;
+  border-radius: 15px;
+  font-family: Futura PT;
+  font-weight: 450;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
 }
