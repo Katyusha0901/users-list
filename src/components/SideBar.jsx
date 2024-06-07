@@ -28,12 +28,9 @@ export function SideBar() {
     <div className="side-bar">
       <div className="side-bar__emblem"></div>
       <div className="side-bar__admin-icon"></div>
-      {/* <div className="side-bar__icon"> */}
       {icons.map((icon) => {
         return <img className="side-bar__icon" src={icon} alt={icon} />;
       })}
-      {/* <img src={icon} /> */}
-      {/* </div> */}
     </div>
   );
 }
