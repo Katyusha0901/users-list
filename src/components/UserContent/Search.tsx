@@ -9,7 +9,12 @@ export function Search() {
     <div className="search">
       <div className="search__input-field">
         <input className="search__input" value="Поиск по Email"></input>
-        <img className="search__icon" src={search} alt="search" />
+        <img
+          className="search__icon"
+          src={search}
+          alt="search"
+          onClick={() => setIsCluckSearch(false)}
+        />
       </div>
     </div>
   ) : (
