@@ -1,0 +1,21 @@
+.show-message {
+  width: 526px;
+  height: 213px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-message__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-message__title {
+  font-family: Futura PT;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26.4px;
+}

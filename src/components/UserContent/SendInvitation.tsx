@@ -8,12 +8,14 @@ interface Props {
   setAddUserFunciton: React.Dispatch<React.SetStateAction<boolean>>;
   emailData: string;
   setEmailFunction: React.Dispatch<React.SetStateAction<string>>;
+  setSendedInvitationFunction: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const SendInvitation: React.FC<Props> = ({
   setAddUserFunciton,
   emailData,
   setEmailFunction,
+  setSendedInvitationFunction,
 }) => {
   const [isClickArrow, setIsClickArrow] = useState<boolean>(false);
 
@@ -54,6 +56,7 @@ export const SendInvitation: React.FC<Props> = ({
             onClick={() => {
               setAddUserFunciton(false);
               setIsClickArrow(false);
+              setSendedInvitationFunction(true);
             }}
           >
             Отправить приглашение
@@ -98,6 +101,7 @@ export const SendInvitation: React.FC<Props> = ({
           onClick={() => {
             setAddUserFunciton(false);
             setIsClickArrow(false);
+            setSendedInvitationFunction(true);
           }}
         >
           Отправить приглашение

@@ -44,6 +44,7 @@ export const Header: React.FC<Props> = () => {
             setAddUserFunciton={setAddUser}
             emailData={email}
             setEmailFunction={setEmail}
+            setSendedInvitationFunction={setSendedInvitation}
           />
         </div>
       </div>
