@@ -4,7 +4,9 @@ import { Header } from "./Header";
 import { useState } from "react";
 import { User } from "../../types";
 
-export function UsersContent() {
+interface Props {}
+
+export const UsersContent: React.FC<Props> = () => {
   console.log(usersInformation);
   const [users, setUsers] = useState<User[]>(usersInformation);
 
@@ -15,4 +17,4 @@ export function UsersContent() {
       </div>
     </div>
   );
-}
+};

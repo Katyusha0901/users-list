@@ -2,7 +2,9 @@ import { useState } from "react";
 import search from "../../images/search.svg";
 import "../../styles/Search.css";
 
-export function Search() {
+interface Props {}
+
+export const Search: React.FC<Props> = () => {
   const [isClickSearch, setIsCluckSearch] = useState<boolean>(false);
 
   return isClickSearch ? (
@@ -26,4 +28,4 @@ export function Search() {
       />
     </div>
   );
-}
+};

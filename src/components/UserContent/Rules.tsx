@@ -2,7 +2,9 @@ import check from "../../images/check.svg";
 import { useState, useContext } from "react";
 import { PermissionsContext } from "../../PermissionsContext";
 
-export function Rules() {
+interface Props {}
+
+export const Rules: React.FC<Props> = () => {
   const { takeAllPermissions } = useContext(PermissionsContext);
 
   const [permissionStatus, setPermissionStatus] = useState<
@@ -83,4 +85,4 @@ export function Rules() {
       )}
     </div>
   );
-}
+};
