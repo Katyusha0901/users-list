@@ -6,9 +6,15 @@ import { Rules } from "./Rules";
 
 interface Props {
   setAddUserFunciton: React.Dispatch<React.SetStateAction<boolean>>;
+  emailData: string;
+  setEmailFunction: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const SendInvitation: React.FC<Props> = ({ setAddUserFunciton }) => {
+export const SendInvitation: React.FC<Props> = ({
+  setAddUserFunciton,
+  emailData,
+  setEmailFunction,
+}) => {
   const [isClickArrow, setIsClickArrow] = useState<boolean>(false);
 
   return isClickArrow ? (
@@ -30,7 +36,8 @@ export const SendInvitation: React.FC<Props> = ({ setAddUserFunciton }) => {
           <div className="send-invitation__form-field send-invitation__email ">
             <input
               className="send-invitation__email-input"
-              value="Email"
+              value={emailData}
+              onChange={(e) => setEmailFunction(e.target.value)}
             ></input>
           </div>
           <div
@@ -71,7 +78,11 @@ export const SendInvitation: React.FC<Props> = ({ setAddUserFunciton }) => {
       <div className="send-invitation__title">Отправьте приглашение</div>
       <div className="send-invitation__form">
         <div className="send-invitation__form-field send-invitation__email ">
-          <input className="send-invitation__email-input" value="Email"></input>
+          <input
+            className="send-invitation__email-input"
+            value={emailData}
+            onChange={(e) => setEmailFunction(e.target.value)}
+          ></input>
         </div>
         <div
           className="send-invitation__form-field send-invitation__filter"

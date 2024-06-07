@@ -9,6 +9,7 @@ interface Props {}
 export const Header: React.FC<Props> = () => {
   const [addUser, setAddUser] = useState<boolean>(true);
   const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("Email");
   const [closedDispatchSend, setClosedDispatchSend] = useState<boolean>(false);
 
   return addUser ? (
@@ -21,7 +22,10 @@ export const Header: React.FC<Props> = () => {
             Добавить пользователя
           </div>
         </div>
-        <ShowSendedMessage />
+        <ShowSendedMessage
+          emailData={email}
+          setSendedInvitationFunction={setSendedInvitation}
+        />
       </div>
     ) : (
       <div>
@@ -36,7 +40,11 @@ export const Header: React.FC<Props> = () => {
               Добавить пользователя
             </div>
           </div>
-          <SendInvitation setAddUserFunciton={setAddUser} />
+          <SendInvitation
+            setAddUserFunciton={setAddUser}
+            emailData={email}
+            setEmailFunction={setEmail}
+          />
         </div>
       </div>
     )
