@@ -1,0 +1,77 @@
+.send-invitation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  background-color: #f9fafb;
+  border-radius: 25px;
+  padding-top: 28px;
+}
+
+.send-invitation__header {
+  display: flex;
+  justify-content: flex-end;
+  width: 526px;
+}
+
+.send-invitation__close {
+  display: flex;
+  background-color: #ebebf0;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-right: 28px;
+}
+
+.send-invitation__title {
+  font-family: Futura PT;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 44px;
+  margin-bottom: 20px;
+}
+.send-invitation__form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.send-invitation__form-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 404px;
+  height: 61px;
+  border-radius: 10px;
+  border: 1px solid #c1c1cb;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 20px;
+  color: #9494a0;
+}
+
+.send-invitation__email-input {
+  border: 0px;
+  background-color: #f9fafb;
+  color: #9494a0;
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.send-invitation__email-input:focus {
+  outline: none;
+}

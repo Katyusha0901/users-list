@@ -4,7 +4,7 @@ import { Search } from "./Search";
 import { SendInvitation } from "./SendInvitation";
 
 export function Header() {
-  const [addUser, setAddUser] = useState<boolean>(false);
+  const [addUser, setAddUser] = useState<boolean>(true);
   const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
   const [closedDispatchSend, setClosedDispatchSend] = useState<boolean>(false);
 
@@ -16,8 +16,8 @@ export function Header() {
         <div className="header__add-button" onClick={() => setAddUser(true)}>
           Добавить пользователя
         </div>
-        <SendInvitation />
       </div>
+      <SendInvitation />
     </div>
   ) : (
     <div className="header">

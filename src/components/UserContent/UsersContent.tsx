@@ -1,9 +1,12 @@
 import "../../styles/UsersContent.css";
-import users from "../../users.json";
+import usersInformation from "../../users.json";
 import { Header } from "./Header";
-export function UsersContent() {
-  console.log(users);
+import { useState } from "react";
+import { User } from "../../types";
 
+export function UsersContent() {
+  console.log(usersInformation);
+  const [users, setUsers] = useState<User[]>(usersInformation);
   return (
     <div className="users-content">
       <div className="users-content__content">

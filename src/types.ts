@@ -1,6 +1,6 @@
 export interface User {
   name: string;
   email: string;
-  permission: string[];
+  permissions: string[];
   image: string;
 }
