@@ -33,6 +33,10 @@
   color: #9494a0;
 }
 
+.search__input:focus {
+  outline: none;
+}
+
 .search__iconNotActive {
   margin-left: 714px;
 }

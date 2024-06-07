@@ -1,14 +1,32 @@
 import { useState } from "react";
 import "../../styles/Header.css";
 import { Search } from "./Search";
+import { SendInvitation } from "./SendInvitation";
 
 export function Header() {
-  return (
+  const [addUser, setAddUser] = useState<boolean>(false);
+  const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
+  const [closedDispatchSend, setClosedDispatchSend] = useState<boolean>(false);
+
+  return addUser ? (
     <div className="header">
       <div className="header__title">Команда</div>
       <div className="header__options">
         <Search />
-        <div className="header__add-button">Добавить пользователя</div>
+        <div className="header__add-button" onClick={() => setAddUser(true)}>
+          Добавить пользователя
+        </div>
+        <SendInvitation />
+      </div>
+    </div>
+  ) : (
+    <div className="header">
+      <div className="header__title">Команда</div>
+      <div className="header__options">
+        <Search />
+        <div className="header__add-button" onClick={() => setAddUser(true)}>
+          Добавить пользователя
+        </div>
       </div>
     </div>
   );
