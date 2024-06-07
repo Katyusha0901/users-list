@@ -11,6 +11,7 @@
   border-radius: 25px;
   padding-top: 28px;
   padding-bottom: 61px;
+  box-shadow: -30px 30px 50px rgb(28, 28, 30, 0.1);
 }
 
 .send-invitation__header {

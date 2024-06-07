@@ -11,9 +11,9 @@ export const Header: React.FC<Props> = () => {
   const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("Email");
   const [closedDispatchSend, setClosedDispatchSend] = useState<boolean>(false);
-
+  console.log(sendedInvitation);
   return addUser ? (
-    sendedInvitation ? (
+    <div>
       <div className="header">
         <div className="header__title">Команда</div>
         <div className="header__options">
@@ -22,33 +22,30 @@ export const Header: React.FC<Props> = () => {
             Добавить пользователя
           </div>
         </div>
-        <ShowSendedMessage
+        <SendInvitation
+          setAddUserFunciton={setAddUser}
           emailData={email}
+          setEmailFunction={setEmail}
           setSendedInvitationFunction={setSendedInvitation}
         />
       </div>
-    ) : (
-      <div>
-        <div className="header">
-          <div className="header__title">Команда</div>
-          <div className="header__options">
-            <Search />
-            <div
-              className="header__add-button"
-              onClick={() => setAddUser(true)}
-            >
-              Добавить пользователя
-            </div>
+    </div>
+  ) : sendedInvitation ? (
+    <>
+      <div className="header">
+        <div className="header__title">Команда</div>
+        <div className="header__options">
+          <Search />
+          <div className="header__add-button" onClick={() => setAddUser(true)}>
+            Добавить пользователя
           </div>
-          <SendInvitation
-            setAddUserFunciton={setAddUser}
-            emailData={email}
-            setEmailFunction={setEmail}
-            setSendedInvitationFunction={setSendedInvitation}
-          />
         </div>
       </div>
-    )
+      <ShowSendedMessage
+        emailData={email}
+        setSendedInvitationFunction={setSendedInvitation}
+      />
+    </>
   ) : (
     <div className="header">
       <div className="header__title">Команда</div>
