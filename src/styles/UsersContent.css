@@ -7,6 +7,8 @@
 }
 
 .users-content__content {
+  display: flex;
+  flex-direction: column;
   background-color: #f9fafb;
   border-radius: 10px;
 }

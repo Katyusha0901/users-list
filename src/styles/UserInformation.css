@@ -1,0 +1,16 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 29px;
+  padding-right: 29px;
+  background-color: #f9fafb;
+}
+
+.user:hover {
+  background-color: #efeff6;
+}
+
+.user__informaion {
+}
