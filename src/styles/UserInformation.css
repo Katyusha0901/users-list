@@ -72,3 +72,12 @@
   font-size: 16px;
   line-height: 20px;
 }
+
+.user__permission_blue {
+  color: #5a57ff;
+  border: 1px solid #5a57ff;
+}
+
+.user__menu {
+  cursor: pointer;
+}
