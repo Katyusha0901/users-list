@@ -17,7 +17,7 @@ export function Header() {
           Добавить пользователя
         </div>
       </div>
-      <SendInvitation />
+      <SendInvitation setAddUserFunciton={setAddUser} />
     </div>
   ) : (
     <div className="header">

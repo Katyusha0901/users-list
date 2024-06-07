@@ -10,6 +10,7 @@
   background-color: #f9fafb;
   border-radius: 25px;
   padding-top: 28px;
+  padding-bottom: 61px;
 }
 
 .send-invitation__header {
@@ -49,7 +50,7 @@
   justify-content: space-between;
   width: 404px;
   height: 61px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #c1c1cb;
   padding-left: 10px;
   padding-right: 20px;
@@ -74,4 +75,61 @@
 
 .send-invitation__email-input:focus {
   outline: none;
+}
+
+.send-invitation__filter {
+  cursor: pointer;
+}
+
+.send-invitation__rules {
+  position: absolute;
+  width: 222px;
+  padding: 20px;
+  border: 1px solid #c1c1cb;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f9fafb;
+  top: 60%;
+  left: 71%;
+  font-family: Futura PT;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.send-invitation__rules-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.send-invitation__checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #c1c1cb;
+  border-radius: 5px;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.send-invitation__checkbox_clicked {
+  background-color: #5856d6;
+}
+
+.send-invitation__check {
+  width: 8px;
+  height: 6.4px;
+}
+
+.send-invitation__send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #32c076;
+  color: #f9fafb;
 }

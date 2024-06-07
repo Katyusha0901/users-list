@@ -2,26 +2,26 @@ import closeButton from "../../images/CloseButton.svg";
 import arrow from "../../images/arrow.svg";
 import "../../styles/SendInvitation.css";
 import { useState, useContext } from "react";
-import { PermissionsContext } from "../../PermissionsContext";
+import { Rules } from "./Rules";
 
-export function SendInvitation() {
+interface Props {
+  setAddUserFunciton: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const SendInvitation: React.FC<Props> = ({ setAddUserFunciton }) => {
   const [isClickArrow, setIsClickArrow] = useState<boolean>(false);
-  const { takeAllPermissions } = useContext(PermissionsContext);
-  const [permissionStatus, setPermissionStatus] = useState<
-    { permissionName: string; isChecked: boolean }[]
-  >(permitionsStatusObObject());
-  function permitionsStatusObObject() {
-    return takeAllPermissions().map((permission: string) => {
-      return { permissionName: permission, isChecked: false };
-    });
-  }
 
   return isClickArrow ? (
     <>
-      (
       <div className="send-invitation">
         <div className="send-invitation__header">
-          <div className="send-invitation__close">
+          <div
+            className="send-invitation__close"
+            onClick={() => {
+              setAddUserFunciton(false);
+              setIsClickArrow(false);
+            }}
+          >
             <img src={closeButton} alt="close" />
           </div>
         </div>
@@ -33,65 +33,38 @@ export function SendInvitation() {
               value="Email"
             ></input>
           </div>
-          <div className="send-invitation__form-field send-invitation__filter">
-            <div className="send-invitation__filter-text ">
+          <div
+            className="send-invitation__form-field send-invitation__filter"
+            onClick={() => setIsClickArrow(false)}
+          >
+            <div className="send-invitation__filter-text  ">
               Выберите права доступа
             </div>
-            <img
-              src={arrow}
-              alt="arrow"
-              onClick={() => setIsClickArrow(false)}
-            />
+            <img src={arrow} alt="arrow" />
           </div>
-          <div className="send-invitation__send-button">
+          <div
+            className="send-invitation__form-field send-invitation__send-button"
+            onClick={() => {
+              setAddUserFunciton(false);
+              setIsClickArrow(false);
+            }}
+          >
             Отправить приглашение
           </div>
         </div>
       </div>
-      <div className="send-invitation__rules">
-        {permissionStatus.map(
-          (permission: { permissionName: string; isChecked: boolean }) => {
-            return permission.isChecked ? (
-              <div className="send-invitation__rules-item">
-                <div
-                  className="send-invitation__checkbox-clicked"
-                  onClick={() => {
-                    setPermissionStatus(
-                      permissionStatus.map(
-                        (permission: {
-                          permissionName: string;
-                          isChecked: boolean;
-                        }) => {
-                          return {
-                            permissionName: permission.permissionName,
-                            isChecked: !permission.isChecked,
-                          };
-                        }
-                      )
-                    );
-                  }}
-                ></div>
-                <div className="send-invitation__permission">
-                  {permission.permissionName}
-                </div>
-              </div>
-            ) : (
-              <div className="send-invitation__rules-item">
-                <div className="send-invitation__checkbox"></div>
-                <div className="send-invitation__permission">
-                  {permission.permissionName}
-                </div>
-              </div>
-            );
-          }
-        )}
-      </div>
-      )
+      <Rules />
     </>
   ) : (
     <div className="send-invitation">
       <div className="send-invitation__header">
-        <div className="send-invitation__close">
+        <div
+          className="send-invitation__close"
+          onClick={() => {
+            setAddUserFunciton(false);
+            setIsClickArrow(false);
+          }}
+        >
           <img src={closeButton} alt="close" />
         </div>
       </div>
@@ -100,16 +73,25 @@ export function SendInvitation() {
         <div className="send-invitation__form-field send-invitation__email ">
           <input className="send-invitation__email-input" value="Email"></input>
         </div>
-        <div className="send-invitation__form-field send-invitation__filter">
-          <div className="send-invitation__filter-text ">
+        <div
+          className="send-invitation__form-field send-invitation__filter"
+          onClick={() => setIsClickArrow(true)}
+        >
+          <div className="send-invitation__filter-text">
             Выберите права доступа
           </div>
-          <img src={arrow} alt="arrow" onClick={() => setIsClickArrow(true)} />
+          <img src={arrow} alt="arrow" />
         </div>
-        <div className="send-invitation__send-button">
+        <div
+          className="send-invitation__form-field send-invitation__send-button"
+          onClick={() => {
+            setAddUserFunciton(false);
+            setIsClickArrow(false);
+          }}
+        >
           Отправить приглашение
         </div>
       </div>
     </div>
   );
-}
+};
