@@ -1,7 +1,7 @@
 import closeButton from "../../images/CloseButton.svg";
 import arrow from "../../images/arrow.svg";
 import "../../styles/SendInvitation.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Rules } from "./Rules";
 
 interface Props {
