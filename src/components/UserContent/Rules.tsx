@@ -1,5 +1,4 @@
 import check from "../../images/check.svg";
-import { useState, useContext } from "react";
 import "../../styles/Rules.css";
 
 interface Props {
@@ -14,13 +13,16 @@ interface Props {
   >;
 }
 
-export const Rules: React.FC<Props> = ({permissionStatusData,setPermissionStatusFunction}) => {
+export const Rules: React.FC<Props> = ({
+  permissionStatusData,
+  setPermissionStatusFunction,
+}) => {
   return (
     <div className="rules">
       {permissionStatusData.map(
         (permission: { permissionName: string; isChecked: boolean }) => {
           return permission.isChecked ? (
-            <div className="rules__item">
+            <div className="rules__item" key={permission.permissionName}>
               <div
                 className="rules__checkbox rules__checkbox_clicked"
                 onClick={() => {
@@ -47,7 +49,7 @@ export const Rules: React.FC<Props> = ({permissionStatusData,setPermissionStatus
               <div>{permission.permissionName}</div>
             </div>
           ) : (
-            <div className="rules__item">
+            <div className="rules__item" key={permission.permissionName}>
               <div
                 className="rules__checkbox"
                 onClick={() => {

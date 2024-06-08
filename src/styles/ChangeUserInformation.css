@@ -1,0 +1,26 @@
+.change-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  box-shadow: -30px 30px 50px rgb(28, 28, 30, 0.1);
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  padding: 28px;
+  gap: 28px;
+  background-color: #f9fafb;
+}
+
+.change-panel__item {
+  font-family: Futura PT;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #424f5e;
+  cursor: pointer;
+}
+
+.change-panel__item-delete {
+  color: #9494a0;
+}

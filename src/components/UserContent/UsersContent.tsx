@@ -11,8 +11,6 @@ interface Props {}
 export const UsersContent: React.FC<Props> = () => {
   const { users } = useContext(UsersContext);
 
-  console.log(usersInformation);
-
   return (
     <div className="users-content">
       <div className="users-content__content">
