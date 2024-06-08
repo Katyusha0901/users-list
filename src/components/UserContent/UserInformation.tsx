@@ -38,6 +38,7 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
           </div>
         </div>
       </div>
+
       <div className="user__menu" onClick={() => setIsClickMenu(false)}>
         <img src={menu} alt="menu" />
       </div>
@@ -65,6 +66,8 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
                 <div className="user__permission user__permission_blue">
                   {permission}
                 </div>
+              ) : permission === undefined ? (
+                <div></div>
               ) : (
                 <div className="user__permission"> {permission}</div>
               )
