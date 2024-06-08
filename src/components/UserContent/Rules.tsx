@@ -1,33 +1,31 @@
 import check from "../../images/check.svg";
 import { useState, useContext } from "react";
-import { PermissionsContext } from "../../PermissionsContext";
 import "../../styles/Rules.css";
 
-interface Props {}
+interface Props {
+  permissionStatusData: { permissionName: string; isChecked: boolean }[];
+  setPermissionStatusFunction: React.Dispatch<
+    React.SetStateAction<
+      {
+        permissionName: string;
+        isChecked: boolean;
+      }[]
+    >
+  >;
+}
 
-export const Rules: React.FC<Props> = () => {
-  const { takeAllPermissions } = useContext(PermissionsContext);
-
-  const [permissionStatus, setPermissionStatus] = useState<
-    { permissionName: string; isChecked: boolean }[]
-  >(permitionsStatusObObject());
-
-  function permitionsStatusObObject() {
-    return takeAllPermissions().map((permission: string) => {
-      return { permissionName: permission, isChecked: false };
-    });
-  }
+export const Rules: React.FC<Props> = ({permissionStatusData,setPermissionStatusFunction}) => {
   return (
     <div className="rules">
-      {permissionStatus.map(
+      {permissionStatusData.map(
         (permission: { permissionName: string; isChecked: boolean }) => {
           return permission.isChecked ? (
             <div className="rules__item">
               <div
                 className="rules__checkbox rules__checkbox_clicked"
                 onClick={() => {
-                  setPermissionStatus(
-                    permissionStatus.map(
+                  setPermissionStatusFunction(
+                    permissionStatusData.map(
                       (permissionInformation: {
                         permissionName: string;
                         isChecked: boolean;
@@ -53,8 +51,8 @@ export const Rules: React.FC<Props> = () => {
               <div
                 className="rules__checkbox"
                 onClick={() => {
-                  setPermissionStatus(
-                    permissionStatus.map(
+                  setPermissionStatusFunction(
+                    permissionStatusData.map(
                       (permissionInformation: {
                         permissionName: string;
                         isChecked: boolean;

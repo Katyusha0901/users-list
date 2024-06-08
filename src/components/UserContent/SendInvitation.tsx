@@ -1,8 +1,11 @@
 import closeButton from "../../images/CloseButton.svg";
 import arrow from "../../images/arrow.svg";
 import "../../styles/SendInvitation.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { PermissionsContext } from "../../PermissionsContext";
 import { Rules } from "./Rules";
+import { UsersContext } from "../../UsersContext";
+import userImage from "../../images/user.svg";
 
 interface Props {
   setAddUserFunciton: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +21,38 @@ export const SendInvitation: React.FC<Props> = ({
   setSendedInvitationFunction,
 }) => {
   const [isClickArrow, setIsClickArrow] = useState<boolean>(false);
+  const { takeAllPermissions } = useContext(PermissionsContext);
+  const [permissionStatus, setPermissionStatus] = useState<
+    { permissionName: string; isChecked: boolean }[]
+  >(permitionsStatusObject());
+  const { users, setUsers } = useContext(UsersContext);
 
+  function permitionsStatusObject() {
+    return takeAllPermissions().map((permission: string) => {
+      return { permissionName: permission, isChecked: false };
+    });
+  }
+
+  function checkedPermissions() {
+    const permissions: string[] = [];
+
+    permissionStatus.forEach(
+      (permission: { permissionName: string; isChecked: boolean }) => {
+        if (permission.isChecked) {
+          permissions.push(permission.permissionName);
+        }
+      }
+    );
+
+    if (permissions.length > 0) {
+      return permissions;
+    }
+
+    return permissionStatus.map(
+      (permission: { permissionName: string; isChecked: boolean }) =>
+        permission.permissionName
+    );
+  }
   return isClickArrow ? (
     <>
       <div className="send-invitation">
@@ -57,13 +91,25 @@ export const SendInvitation: React.FC<Props> = ({
               setAddUserFunciton(false);
               setIsClickArrow(false);
               setSendedInvitationFunction(true);
+              setUsers([
+                {
+                  name: "Пользователь",
+                  email: emailData,
+                  permissions: checkedPermissions(),
+                  image: userImage,
+                },
+                ...users,
+              ]);
             }}
           >
             Отправить приглашение
           </div>
         </div>
       </div>
-      <Rules />
+      <Rules
+        permissionStatusData={permissionStatus}
+        setPermissionStatusFunction={setPermissionStatus}
+      />
     </>
   ) : (
     <div className="send-invitation">
@@ -102,6 +148,15 @@ export const SendInvitation: React.FC<Props> = ({
             setAddUserFunciton(false);
             setIsClickArrow(false);
             setSendedInvitationFunction(true);
+            setUsers([
+              {
+                name: "Пользователь",
+                email: emailData,
+                permissions: checkedPermissions(),
+                image: userImage,
+              },
+              ...users,
+            ]);
           }}
         >
           Отправить приглашение

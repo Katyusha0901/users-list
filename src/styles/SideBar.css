@@ -15,15 +15,18 @@
   background-image: url("../images/emblem.svg");
   width: 22.47px;
   height: 34px;
+  cursor: pointer;
 }
 
 .side-bar__admin-icon {
   width: 60px;
   height: 60px;
   background-image: url("../images/admin-icon.svg");
+  cursor: pointer;
 }
 
 .side-bar__icon {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }

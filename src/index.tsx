@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import "./styles/index.css";
 import { PermissionsContextProvider } from "./PermissionsContext";
+import { UsersContextProvider } from "./UsersContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <PermissionsContextProvider>
-      <App />
+      <UsersContextProvider>
+        <App />
+      </UsersContextProvider>
     </PermissionsContextProvider>
   </React.StrictMode>
 );
