@@ -12,9 +12,7 @@ export const ShowSendedMessage: React.FC<Props> = ({
     <div className="show-message">
       <div className="show-message__content">
         {emailData === "Email" ? (
-          <div className="show-message__title">
-            Приглашение отправлено на почту example@email.com
-          </div>
+          <div className="show-message__title">Неверно указана почта</div>
         ) : (
           <div className="show-message__title">
             Приглашение отправлено на почту {emailData}

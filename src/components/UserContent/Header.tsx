@@ -7,11 +7,10 @@ import { ShowSendedMessage } from "./ShowSendedMessage";
 interface Props {}
 
 export const Header: React.FC<Props> = () => {
-  const [addUser, setAddUser] = useState<boolean>(true);
+  const [addUser, setAddUser] = useState<boolean>(false);
   const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("Email");
-  const [closedDispatchSend, setClosedDispatchSend] = useState<boolean>(false);
-  console.log(sendedInvitation);
+
   return addUser ? (
     <div>
       <div className="header">

@@ -6,6 +6,7 @@ import { PermissionsContext } from "../../PermissionsContext";
 import { Rules } from "./Rules";
 import { UsersContext } from "../../UsersContext";
 import userImage from "../../images/user.svg";
+import { User } from "../../types";
 
 interface Props {
   setAddUserFunciton: React.Dispatch<React.SetStateAction<boolean>>;
@@ -53,6 +54,13 @@ export const SendInvitation: React.FC<Props> = ({
         permission.permissionName
     );
   }
+
+  function changeUsersData(userInformation: User) {
+    if (userInformation.email === "Email") {
+      return;
+    }
+    setUsers([...users, userInformation]);
+  }
   return isClickArrow ? (
     <>
       <div className="send-invitation">
@@ -91,15 +99,12 @@ export const SendInvitation: React.FC<Props> = ({
               setAddUserFunciton(false);
               setIsClickArrow(false);
               setSendedInvitationFunction(true);
-              setUsers([
-                {
-                  name: "Пользователь",
-                  email: emailData,
-                  permissions: checkedPermissions(),
-                  image: userImage,
-                },
-                ...users,
-              ]);
+              changeUsersData({
+                name: "Пользователь",
+                email: emailData,
+                permissions: checkedPermissions(),
+                image: userImage,
+              });
             }}
           >
             Отправить приглашение
@@ -148,15 +153,12 @@ export const SendInvitation: React.FC<Props> = ({
             setAddUserFunciton(false);
             setIsClickArrow(false);
             setSendedInvitationFunction(true);
-            setUsers([
-              {
-                name: "Пользователь",
-                email: emailData,
-                permissions: checkedPermissions(),
-                image: userImage,
-              },
-              ...users,
-            ]);
+            changeUsersData({
+              name: "Пользователь",
+              email: emailData,
+              permissions: checkedPermissions(),
+              image: userImage,
+            });
           }}
         >
           Отправить приглашение
