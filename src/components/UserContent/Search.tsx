@@ -5,7 +5,7 @@ import "../../styles/Search.css";
 interface Props {}
 
 export const Search: React.FC<Props> = () => {
-  const [isClickSearch, setIsCluckSearch] = useState<boolean>(false);
+  const [isClickSearch, setIsClickSearch] = useState<boolean>(false);
 
   return isClickSearch ? (
     <div className="search">
@@ -15,12 +15,12 @@ export const Search: React.FC<Props> = () => {
           className="search__icon"
           src={search}
           alt="search"
-          onClick={() => setIsCluckSearch(false)}
+          onClick={() => setIsClickSearch(false)}
         />
       </div>
     </div>
   ) : (
-    <div className="search" onClick={() => setIsCluckSearch(true)}>
+    <div className="search" onClick={() => setIsClickSearch(true)}>
       <img
         className="search__icon search__iconNotActive"
         src={search}

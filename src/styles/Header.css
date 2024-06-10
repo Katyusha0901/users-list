@@ -1,10 +1,9 @@
 .header {
   display: flex;
-  height: 75px;
+  /* height: 75px; */
   justify-content: space-between;
   align-items: center;
-  padding-left: 29px;
-  padding-right: 29px;
+  padding: 29px;
   border-bottom: 1px solid;
   border-color: #ebebf0;
 }
@@ -20,7 +19,7 @@
 
 .header__options {
   display: flex;
-  justify-self: end;
+  justify-content: flex-end;
 }
 
 .header__add-button {
@@ -38,4 +37,40 @@
   margin-left: 10px;
   color: #f9fafb;
   cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 1252px) {
+  .header__add-button {
+    font-size: 1.5vw;
+    width: 10vw;
+    line-height: 1.5vw;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 632px) {
+  .header {
+    flex-direction: column;
+    padding: 14px;
+  }
+  .header__options {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__title {
+    align-self: flex-start;
+  }
+
+  .header__add-button {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: 16px;
+  }
 }

@@ -12,7 +12,7 @@ export const Header: React.FC<Props> = () => {
   const [email, setEmail] = useState<string>("Email");
 
   return addUser ? (
-    <div>
+    <>
       <div className="header">
         <div className="header__title">Команда</div>
         <div className="header__options">
@@ -21,14 +21,14 @@ export const Header: React.FC<Props> = () => {
             Добавить пользователя
           </div>
         </div>
-        <SendInvitation
-          setAddUserFunciton={setAddUser}
-          emailData={email}
-          setEmailFunction={setEmail}
-          setSendedInvitationFunction={setSendedInvitation}
-        />
       </div>
-    </div>
+      <SendInvitation
+        setAddUserFunciton={setAddUser}
+        emailData={email}
+        setEmailFunction={setEmail}
+        setSendedInvitationFunction={setSendedInvitation}
+      />
+    </>
   ) : sendedInvitation ? (
     <>
       <div className="header">

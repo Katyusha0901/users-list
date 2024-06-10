@@ -7,9 +7,18 @@
 }
 
 .users-content__content {
+  width: 79vw;
+
   display: flex;
   flex-direction: column;
   background-color: #f9fafb;
   border-radius: 10px;
   padding-bottom: 10px;
 }
+
+/* @media screen and (max-width: 1252px) {
+  .users-content__content {
+    position: absolute;
+    width: 70vw;
+  }
+} */

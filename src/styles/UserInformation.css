@@ -60,10 +60,11 @@
 .user__permission {
   display: flex;
   justify-content: center;
-  padding-left: 7px;
-  padding-right: 7px;
+  /* padding-left: 7px;
+  padding-right: 7px; */
+  padding: 7px;
   align-items: center;
-  height: 30px;
+  /* height: 30px; */
   border-radius: 10px;
   border: 1px solid #c1c1cb;
   color: #9494a0;
@@ -88,4 +89,17 @@
   line-height: 20px;
   font-weight: 450;
   color: #9494a0;
+}
+
+@media screen and (max-width: 632px) {
+  .user__header {
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .user__permission {
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 5px;
+  }
 }
