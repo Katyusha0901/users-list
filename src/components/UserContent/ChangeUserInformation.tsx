@@ -70,10 +70,12 @@ export const ChangeUserInformation: React.FC<Props> = ({
           Удалить
         </div>
       </div>
-      <Rules
-        permissionStatusData={permissionStatus}
-        setPermissionStatusFunction={setPermissionStatus}
-      />
+      <div className="change-panel__rules">
+        <Rules
+          permissionStatusData={permissionStatus}
+          setPermissionStatusFunction={setPermissionStatus}
+        />
+      </div>
     </>
   ) : (
     <div className="change-panel">

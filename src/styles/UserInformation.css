@@ -81,3 +81,11 @@
 .user__menu {
   cursor: pointer;
 }
+
+.user__additional-information {
+  font-family: Futura PT;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 450;
+  color: #9494a0;
+}

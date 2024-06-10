@@ -2,7 +2,6 @@
   position: absolute;
   width: 222px;
   padding: 20px;
-  border: 1px solid #c1c1cb;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -16,6 +15,7 @@
   font-size: 16px;
   line-height: 20px;
   gap: 10px;
+  box-shadow: -30px 30px 50px rgb(28, 28, 30, 0.1);
 }
 
 .rules__item {

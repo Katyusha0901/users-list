@@ -59,7 +59,7 @@ export const SendInvitation: React.FC<Props> = ({
     if (userInformation.email === "Email") {
       return;
     }
-    setUsers([...users, userInformation]);
+    setUsers([userInformation, ...users]);
   }
   return isClickArrow ? (
     <>

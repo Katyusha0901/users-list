@@ -24,3 +24,9 @@
 .change-panel__item-delete {
   color: #9494a0;
 }
+
+.change-panel__rules {
+  position: absolute;
+  top: 39%;
+  left: 70%;
+}

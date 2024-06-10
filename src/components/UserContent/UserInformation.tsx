@@ -21,6 +21,11 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
         <div className="user__content">
           <div className="user__header">
             <div className="user__name">{userInformation.name}</div>
+            {userInformation.name === "Пользователь" ? (
+              <div className="user__additional-information">Не авторизован</div>
+            ) : (
+              <div></div>
+            )}
             <div className="user__email">{userInformation.email}</div>
           </div>
           <div className="user__permissions">
@@ -42,6 +47,7 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
       <div className="user__menu" onClick={() => setIsClickMenu(false)}>
         <img src={menu} alt="menu" />
       </div>
+
       <ChangeUserInformation
         userPermissions={userInformation.permissions}
         userName={userInformation.name}
@@ -58,6 +64,11 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
         <div className="user__content">
           <div className="user__header">
             <div className="user__name">{userInformation.name}</div>
+            {userInformation.name === "Пользователь" ? (
+              <div className="user__additional-information">Не авторизован</div>
+            ) : (
+              <div></div>
+            )}
             <div className="user__email">{userInformation.email}</div>
           </div>
           <div className="user__permissions">
