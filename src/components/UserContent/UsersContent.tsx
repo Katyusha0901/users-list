@@ -1,5 +1,4 @@
 import "../../styles/UsersContent.css";
-import usersInformation from "../../users.json";
 import { Header } from "./Header";
 import { UserInformation } from "./UserInformation";
 import { useContext } from "react";
