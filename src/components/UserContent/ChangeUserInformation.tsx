@@ -43,7 +43,6 @@ export const ChangeUserInformation: React.FC<Props> = ({
         return user;
       })
     );
-    console.log(users);
   }, [permissionStatus]);
 
   function permitionsStatusObject() {
