@@ -15,7 +15,7 @@ export const UsersContent: React.FC<Props> = () => {
       <div className="users-content__content">
         <Header />
         {users.map((user: User) => (
-          <UserInformation userInformation={user} />
+          <UserInformation userInformation={user} key={user.name} />
         ))}
       </div>
     </div>

@@ -31,13 +31,19 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
           <div className="user__permissions">
             {userInformation.permissions.map((permission: string | undefined) =>
               permission === "Администратор" ? (
-                <div className="user__permission user__permission_blue">
+                <div
+                  className="user__permission user__permission_blue"
+                  key={permission}
+                >
                   {permission}
                 </div>
               ) : permission === undefined ? (
                 <div></div>
               ) : (
-                <div className="user__permission"> {permission}</div>
+                <div className="user__permission" key={permission}>
+                  {" "}
+                  {permission}
+                </div>
               )
             )}
           </div>
@@ -74,13 +80,19 @@ export const UserInformation: React.FC<Props> = ({ userInformation }) => {
           <div className="user__permissions">
             {userInformation.permissions.map((permission: string) =>
               permission === "Администратор" ? (
-                <div className="user__permission user__permission_blue">
+                <div
+                  className="user__permission user__permission_blue"
+                  key={permission}
+                >
                   {permission}
                 </div>
               ) : permission === undefined ? (
                 <div></div>
               ) : (
-                <div className="user__permission"> {permission}</div>
+                <div className="user__permission" key={permission}>
+                  {" "}
+                  {permission}
+                </div>
               )
             )}
           </div>
