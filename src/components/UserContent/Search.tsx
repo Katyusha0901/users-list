@@ -18,6 +18,10 @@ export const Search: React.FC<Props> = () => {
           onClick={() => setIsClickSearch(false)}
         />
       </div>
+      <div className="search__input-field-mobile">
+        <input className="search__input-mobile" value="Поиск по Email"></input>
+        <img className="search__icon-mobile" src={search} alt="search" />
+      </div>
     </div>
   ) : (
     <div className="search" onClick={() => setIsClickSearch(true)}>
@@ -26,6 +30,10 @@ export const Search: React.FC<Props> = () => {
         src={search}
         alt="search"
       />
+      <div className="search__input-field-mobile">
+        <input className="search__input-mobile" value="Поиск по Email"></input>
+        <img className="search__icon-mobile" src={search} alt="search" />
+      </div>
     </div>
   );
 };

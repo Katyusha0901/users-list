@@ -3,7 +3,7 @@ import { Header } from "./Header";
 import { UserInformation } from "./UserInformation";
 import { useContext } from "react";
 import { User } from "../../types";
-import { UsersContext } from "../../UsersContext";
+import { UsersContext } from "../../context/UsersContext";
 
 interface Props {}
 

@@ -8,6 +8,14 @@
   border-color: #ebebf0;
 }
 
+.header__top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+}
+
 .header__title {
   font-family: "Futura PT";
   font-weight: 700;
@@ -40,12 +48,15 @@
   text-align: center;
 }
 
+.header__menu {
+  display: none;
+}
+
 @media screen and (max-width: 1252px) {
   .header__add-button {
     font-size: 1.5vw;
     width: 10vw;
     line-height: 1.5vw;
-    margin-top: 20px;
   }
 }
 
@@ -54,6 +65,11 @@
     flex-direction: column;
     padding: 14px;
   }
+
+  .header__menu {
+    display: flex;
+  }
+
   .header__options {
     flex-direction: column;
     width: 100%;

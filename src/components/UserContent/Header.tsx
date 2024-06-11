@@ -3,6 +3,7 @@ import "../../styles/Header.css";
 import { Search } from "./Search";
 import { SendInvitation } from "./SendInvitation";
 import { ShowSendedMessage } from "./ShowSendedMessage";
+import menuBurger from "../../images/menuBurger.svg";
 
 interface Props {}
 
@@ -14,6 +15,7 @@ export const Header: React.FC<Props> = () => {
   return addUser ? (
     <>
       <div className="header">
+        <img className="header__menu" src={menuBurger} alt="menu"/>
         <div className="header__title">Команда</div>
         <div className="header__options">
           <Search />
@@ -32,6 +34,8 @@ export const Header: React.FC<Props> = () => {
   ) : sendedInvitation ? (
     <>
       <div className="header">
+        <img className="header__menu" src={menuBurger} alt="menu" />
+
         <div className="header__title">Команда</div>
         <div className="header__options">
           <Search />
@@ -47,7 +51,12 @@ export const Header: React.FC<Props> = () => {
     </>
   ) : (
     <div className="header">
-      <div className="header__title">Команда</div>
+      <div className="header__top">
+        <img className="header__menu" src={menuBurger} alt="menu" />
+
+        <div className="header__title">Команда</div>
+      </div>
+
       <div className="header__options">
         <Search />
         <div className="header__add-button" onClick={() => setAddUser(true)}>

@@ -1,8 +1,8 @@
 import "../../styles/ChangeUserInformation.css";
-import { UsersContext } from "../../UsersContext";
+import { UsersContext } from "../../context/UsersContext";
 import { useContext, useState, useEffect } from "react";
 import { Rules } from "./Rules";
-import { PermissionsContext } from "../../PermissionsContext";
+import { PermissionsContext } from "../../context/PermissionsContext";
 import { User } from "../../types";
 
 interface Props {

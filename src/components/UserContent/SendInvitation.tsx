@@ -2,9 +2,9 @@ import closeButton from "../../images/CloseButton.svg";
 import arrow from "../../images/arrow.svg";
 import "../../styles/SendInvitation.css";
 import { useState, useContext } from "react";
-import { PermissionsContext } from "../../PermissionsContext";
+import { PermissionsContext } from "../../context/PermissionsContext";
 import { Rules } from "./Rules";
-import { UsersContext } from "../../UsersContext";
+import { UsersContext } from "../../context/UsersContext";
 import userImage from "../../images/user.svg";
 import { User } from "../../types";
 

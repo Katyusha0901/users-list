@@ -4,6 +4,44 @@
   justify-content: flex-end;
   width: 400px;
 }
+.search__input-mobile {
+  display: none;
+  justify-self: flex-start;
+  border: 0px;
+  background-color: #f9fafb;
+  height: 20px;
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 16px;
+  color: #9494a0;
+  width: 200px;
+}
+
+.search__input-mobile:focus {
+  outline: none;
+}
+
+.search__input-field-mobile {
+  display: none;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #c1c1cb;
+  padding-left: 8px;
+}
+
+.search__icon-mobile {
+  display: none;
+  width: 16px;
+  height: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+}
 
 .search__icon {
   width: 16px;
@@ -65,8 +103,26 @@
     margin-top: 20px;
     gap: 20px;
   }
+
+  .search__icon {
+    display: none;
+  }
+
+  .search__icon-mobile {
+    display: flex;
+  }
   .search__input-field {
-    position: absolute;
-    width: 100%;
+    display: none;
+  }
+
+  .search__input {
+    display: none;
+  }
+  .search__input-mobile {
+    display: flex;
+  }
+
+  .search__input-field-mobile {
+    display: flex;
   }
 }

@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
-import usersInformation from "./users.json";
-import { User } from "./types";
+import usersInformation from "../users.json";
+import { User } from "../types";
 
 interface ContextType {
   users: User[];

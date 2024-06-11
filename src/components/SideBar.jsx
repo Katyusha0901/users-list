@@ -23,14 +23,24 @@ export function SideBar() {
     ninth,
     tenth,
   ];
-  const icon = first;
   return (
-    <div className="side-bar">
-      <div className="side-bar__emblem"></div>
-      <div className="side-bar__admin-icon"></div>
-      {icons.map((icon) => {
-        return <img className="side-bar__icon" src={icon} alt={icon} />;
-      })}
-    </div>
+    <>
+      <div className="side-bar">
+        <div className="side-bar__emblem"></div>
+        <div className="side-bar__admin-icon"></div>
+        {icons.map((icon) => {
+          return <img className="side-bar__icon" src={icon} alt={icon} />;
+        })}
+      </div>
+      <div className="side-bar-mobile">
+        <div className="side-bar-mobile__emblem"></div>
+        <div className="side-bar-mobile__admin-icon"></div>
+        {icons.map((icon) => {
+          return (
+            <img className="side-bar-mobile__icon" src={icon} alt={icon} />
+          );
+        })}
+      </div>
+    </>
   );
 }

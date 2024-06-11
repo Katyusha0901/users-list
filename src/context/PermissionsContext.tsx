@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
-import users from "./users.json";
-import { User } from "./types";
+import users from "../users.json";
+import { User } from "../types";
 
 interface ContextType {
   takeAllPermissions: () => string[];

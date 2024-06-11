@@ -16,9 +16,16 @@
   padding-bottom: 10px;
 }
 
-/* @media screen and (max-width: 1252px) {
-  .users-content__content {
-    position: absolute;
-    width: 70vw;
+@media screen and (max-width: 632px) {
+  .users-content {
+    align-items: center;
+    padding-top: 0px;
+    width: 100vw;
   }
-} */
+
+  .users-content__content {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0px;
+  }
+}
