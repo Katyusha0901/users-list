@@ -72,7 +72,7 @@ export function SideBar() {
         {iconsMobile.map((icon) => {
           return icon.name === "Выйти" ? (
             <>
-              <div className="side-bar-mobile__item">
+              <div className="side-bar-mobile__item" key={icon.name}>
                 <img
                   className="side-bar-mobile__icon"
                   src={icon.image}
@@ -85,7 +85,7 @@ export function SideBar() {
             </>
           ) : (
             <>
-              <div className="side-bar-mobile__item">
+              <div className="side-bar-mobile__item" key={icon.name}>
                 <img
                   className="side-bar-mobile__icon"
                   src={icon.image}
@@ -103,7 +103,9 @@ export function SideBar() {
       <div className="side-bar__emblem"></div>
       <div className="side-bar__admin-icon"></div>
       {icons.map((icon) => {
-        return <img className="side-bar__icon" src={icon} alt={icon} />;
+        return (
+          <img className="side-bar__icon" src={icon} alt={icon} key={icon} />
+        );
       })}
     </div>
   );
