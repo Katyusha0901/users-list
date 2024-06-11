@@ -49,7 +49,9 @@ export function SideBar() {
         <div className="side-bar__emblem"></div>
         <div className="side-bar__admin-icon"></div>
         {icons.map((icon) => {
-          return <img className="side-bar__icon" src={icon} alt={icon} />;
+          return (
+            <img className="side-bar__icon" src={icon} alt={icon} key={icon} />
+          );
         })}
       </div>
       <div className="side-bar-mobile">

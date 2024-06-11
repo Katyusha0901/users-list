@@ -45,3 +45,15 @@
   line-height: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 632px) {
+  .show-message {
+    width: 300px;
+  }
+  .show-message__content {
+    width: 300px;
+  }
+  .show-message__button {
+    width: 250px;
+  }
+}

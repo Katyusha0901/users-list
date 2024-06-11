@@ -90,3 +90,15 @@
   color: #f9fafb;
   cursor: pointer;
 }
+
+@media screen and (max-width: 632px) {
+  .send-invitation__header {
+    width: 300px;
+  }
+  .send-invitation__title {
+    font-size: 20px;
+  }
+  .send-invitation__form-field {
+    width: 250px;
+  }
+}
