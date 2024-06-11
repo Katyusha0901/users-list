@@ -32,6 +32,9 @@
 }
 
 .side-bar-mobile {
+  position: absolute;
+
+  z-index: 2;
   display: none;
   flex-direction: column;
   justify-content: flex-start;
@@ -39,16 +42,28 @@
   min-width: 100px;
   min-height: 100vh;
   background-color: #f9fafb;
-  padding-top: 25px;
+  padding-top: 82px;
+  padding-left: 20px;
+  padding-right: 60px;
   gap: 25px;
   border-radius: 10px;
+  box-shadow: 0px 0px 150px rgb(28, 28, 30, 0.15);
 }
 
-.side-bar-mobile__emblem {
-  background-image: url("../images/emblem.svg");
-  width: 22.47px;
-  height: 34px;
+.side-bar-mobile__menu {
   cursor: pointer;
+}
+
+.side-bar-mobile__header {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-bar-mobile__user {
+  display: flex;
+  flex-direction: column;
 }
 
 .side-bar-mobile__admin-icon {
@@ -58,14 +73,59 @@
   cursor: pointer;
 }
 
+.side-bar-mobile__name {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: Futura PT;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #424f5e;
+}
+
+.side-bar-mobile__status {
+  font-family: Futura PT;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #9494a0;
+}
+
+.side-bar-mobile__item-name {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: Futura PT;
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 20px;
+  color: #9494a0;
+}
+
+.side-bar-mobile__item-name-red {
+  color: #ff9e90;
+}
+
+.side-bar-mobile__item {
+  display: flex;
+  position: relative;
+  width: 100%;
+  gap: 15px;
+}
+
 .side-bar-mobile__icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 
 @media screen and (max-width: 632px) {
   .side-bar {
     display: none;
+  }
+
+  .side-bar-mobile {
+    display: flex;
   }
 }

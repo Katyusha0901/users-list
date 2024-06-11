@@ -4,6 +4,8 @@ import { Search } from "./Search";
 import { SendInvitation } from "./SendInvitation";
 import { ShowSendedMessage } from "./ShowSendedMessage";
 import menuBurger from "../../images/menuBurger.svg";
+import { IsClickedMenuContext } from "../../context/IsClickedMenuContext";
+import { useContext } from "react";
 
 interface Props {}
 
@@ -11,11 +13,19 @@ export const Header: React.FC<Props> = () => {
   const [addUser, setAddUser] = useState<boolean>(false);
   const [sendedInvitation, setSendedInvitation] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("Email");
+  const { isClickedMenu, setIsClickedMenu } = useContext(IsClickedMenuContext);
 
   return addUser ? (
     <>
       <div className="header">
-        <img className="header__menu" src={menuBurger} alt="menu"/>
+        <img
+          className="header__menu"
+          src={menuBurger}
+          alt="menu"
+          onClick={() => {
+            setIsClickedMenu(!isClickedMenu);
+          }}
+        />
         <div className="header__title">Команда</div>
         <div className="header__options">
           <Search />
@@ -34,7 +44,14 @@ export const Header: React.FC<Props> = () => {
   ) : sendedInvitation ? (
     <>
       <div className="header">
-        <img className="header__menu" src={menuBurger} alt="menu" />
+        <img
+          className="header__menu"
+          src={menuBurger}
+          alt="menu"
+          onClick={() => {
+            setIsClickedMenu(!isClickedMenu);
+          }}
+        />
 
         <div className="header__title">Команда</div>
         <div className="header__options">
@@ -52,7 +69,14 @@ export const Header: React.FC<Props> = () => {
   ) : (
     <div className="header">
       <div className="header__top">
-        <img className="header__menu" src={menuBurger} alt="menu" />
+        <img
+          className="header__menu"
+          src={menuBurger}
+          alt="menu"
+          onClick={() => {
+            setIsClickedMenu(!isClickedMenu);
+          }}
+        />
 
         <div className="header__title">Команда</div>
       </div>

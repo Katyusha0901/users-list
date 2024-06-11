@@ -37,3 +37,10 @@ body {
 
   src: url("../fonts/PTSans-BoldItalic.ttf") format("truetype");
 }
+
+@media screen and (max-width: 632px) {
+  body {
+    margin: 0;
+    background-color: #f9fafb;
+  }
+}

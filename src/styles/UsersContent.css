@@ -19,8 +19,9 @@
 @media screen and (max-width: 632px) {
   .users-content {
     align-items: center;
-    padding-top: 0px;
+    padding-top: 20px;
     width: 100vw;
+    background-color: #f9fafb;
   }
 
   .users-content__content {

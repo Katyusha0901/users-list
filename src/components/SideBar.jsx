@@ -9,6 +9,11 @@ import seventh from "../images/seventh.svg";
 import eighth from "../images/eighth.svg";
 import ninth from "../images/ninth.svg";
 import tenth from "../images/tenth.svg";
+import tenthMobile from "../images/tenthMobile.svg";
+import menuBurger from "../images/menuBurger.svg";
+
+import { IsClickedMenuContext } from "../context/IsClickedMenuContext";
+import { useContext } from "react";
 
 export function SideBar() {
   const icons = [
@@ -23,7 +28,22 @@ export function SideBar() {
     ninth,
     tenth,
   ];
-  return (
+
+  const iconsMobile = [
+    { image: first, name: "Аналитика" },
+    { image: second, name: "Профиль" },
+    { image: third, name: "Модерация" },
+    { image: fourth, name: "Чаты" },
+    { image: fifth, name: "Баннеры" },
+    { image: sixth, name: "Команда" },
+    { image: seventh, name: "Блог" },
+    { image: eighth, name: "Курс валют" },
+    { image: tenthMobile, name: "Выйти" },
+  ];
+
+  const { isClickedMenu, setIsClickedMenu } = useContext(IsClickedMenuContext);
+
+  return isClickedMenu ? (
     <>
       <div className="side-bar">
         <div className="side-bar__emblem"></div>
@@ -33,14 +53,58 @@ export function SideBar() {
         })}
       </div>
       <div className="side-bar-mobile">
-        <div className="side-bar-mobile__emblem"></div>
-        <div className="side-bar-mobile__admin-icon"></div>
-        {icons.map((icon) => {
-          return (
-            <img className="side-bar-mobile__icon" src={icon} alt={icon} />
+        <img
+          className="side-bar-mobile__menu"
+          src={menuBurger}
+          alt="menu"
+          onClick={() => {
+            setIsClickedMenu(!isClickedMenu);
+          }}
+        />
+        <div className="side-bar-mobile__header">
+          <div className="side-bar-mobile__admin-icon"></div>
+          <div className="side-bar-mobile__user">
+            <div className="side-bar-mobile__name">Артем Иванов</div>
+            <div className="side-bar-mobile__status">Собственник</div>
+          </div>
+        </div>
+
+        {iconsMobile.map((icon) => {
+          return icon.name === "Выйти" ? (
+            <>
+              <div className="side-bar-mobile__item">
+                <img
+                  className="side-bar-mobile__icon"
+                  src={icon.image}
+                  alt={icon.name}
+                />
+                <div className="side-bar-mobile__item-name side-bar-mobile__item-name-red">
+                  {icon.name}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="side-bar-mobile__item">
+                <img
+                  className="side-bar-mobile__icon"
+                  src={icon.image}
+                  alt={icon.name}
+                />
+                <div className="side-bar-mobile__item-name">{icon.name}</div>
+              </div>
+            </>
           );
         })}
       </div>
     </>
+  ) : (
+    <div className="side-bar">
+      <div className="side-bar__emblem"></div>
+      <div className="side-bar__admin-icon"></div>
+      {icons.map((icon) => {
+        return <img className="side-bar__icon" src={icon} alt={icon} />;
+      })}
+    </div>
   );
 }
